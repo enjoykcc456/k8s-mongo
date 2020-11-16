@@ -3,7 +3,7 @@ This project is a basic implementation of kubernetes with Minikube cluster
 running services of mongo-express and mongodb.
 
 ### Pre-requisites 
-Installation of [Minikube]("https://minikube.sigs.k8s.io/docs/start/")
+Installation of [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 ### Basic Concepts with Commands
 A Pod (smallest block in k8s) is an abstraction over containers.
