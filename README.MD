@@ -14,7 +14,7 @@ the pod
 - `kubectl logs <pod_name>` : To log a pod
 
 A Deployment is an abstraction over Pods that manages the replica set.
-- `kubectle create deployment <deployment_name> --image=<image_name>` : To get basic deployment with minimal values
+- `kubectl create deployment <deployment_name> --image=<image_name>` : To get basic deployment with minimal values
 - `kubectl edit deployment <deployment_name>` : To edit deployment configuration file
 - `kubectl delete deployment <deployment_name>` : To delete a deployment
 
