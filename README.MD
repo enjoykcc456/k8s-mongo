@@ -6,15 +6,17 @@ running services of mongo-express and mongodb.
 Installation of [Minikube](https://minikube.sigs.k8s.io/docs/start/)
 
 ### Basic Concepts with Commands
+<img src="images/flow.JPG">
+
 A Pod (smallest block in k8s) is an abstraction over containers.
-- `kubectl exec -it <pod name> -- bin/bash` : Get the interactive terminal of the pod application for debugging inside 
+- `kubectl exec -it <pod_name> -- bin/bash` : Get the interactive terminal of the pod application for debugging inside 
 the pod
-- `kubectl logs <pod name>` : To log a pod
+- `kubectl logs <pod_name>` : To log a pod
 
 A Deployment is an abstraction over Pods that manages the replica set.
-- `kubectle create deployment <deployment name> --image=<image name>` : To get basic deployment with minimal values
-- `kubectl edit deployment <deployment name>` : To edit deployment configuration file
-- `kubectl delete deployment <deployment name>` : To delete a deployment
+- `kubectle create deployment <deployment_name> --image=<image_name>` : To get basic deployment with minimal values
+- `kubectl edit deployment <deployment_name>` : To edit deployment configuration file
+- `kubectl delete deployment <deployment_name>` : To delete a deployment
 
 A ReplicateSet is a layer between Deployment and Pod that manages the replicas of a Pod.
 - `kubectl get replicaset` : To get replica sets
@@ -26,7 +28,7 @@ which could be consumed by Pods as environment variables, command-line arguments
 
 A Secret on the other hand is similar to ConfigMap but for storing of confidential information such as passwords, 
 OAuth tokens etc.
-- `echo -n 'youPassword' | base64` : To generate a base64 encoded password which could be used in Secret
+- `echo -n 'your-password' | base64` : To generate a base64 encoded password which could be used in Secret
 
 A Namespace is useful for dividing resources between multiple users, or separate slightly different versions resources 
 (e.g. different versions of the same software). It is like a virtual cluster inside a cluster to help organise resources.
@@ -48,7 +50,7 @@ General commands :
 - `kubectl describe <node | pods| service> [name]` : To show details of a specific resource or group of resources
 - `kubectl get endpoints` : To get the endpoints of a service. (When a service is created, kubernetes creates an 
 endpoint object which has the same name as the service to keep track of the endpoints of the service.)
-- `kubectl get deployment <deployment name> -o yaml > deployment-result.yaml` : To output the updated configuration file 
+- `kubectl get deployment <deployment_name> -o yaml > deployment-result.yaml` : To output the updated configuration file 
 after deployment 
 - `kubectl get pods -o wide` : To get extra information of a pod (e.g. ip address)
 
